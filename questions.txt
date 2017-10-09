@@ -1,0 +1,43 @@
+1. Wat is het artisan commando om een overzicht van de
+   beschikbare routes te zien?
+
+
+
+2.  Welke routes worden geregistreerd als we de route::resource('')
+    methode gebruiken?
+
+
+
+3.  Sommige url's worden twee keer gebruikt voor
+    verschillende requests. Leg uit hoe dit komt.
+
+
+
+4.  Leg in eigen woorden uit wat het 'MVC'
+    (model, view, controller) design pattern inhoudt.
+
+
+5.  Geef aan hoe ik een model maak voor een Project.
+
+
+
+
+6.  Geef aan hoe ik hier een controller voor maak.
+
+
+
+
+7.  Geef een voorbeeld van hoe ik binnen een controller data
+    mee kan geven aan een view.
+
+
+
+8.  Geef een voorbeeld van hoe validatie werkt binnen een controller
+
+
+
+
+9.  Hoe weet Laravel welke tabel bij welk model hoort? Hoe kun je dit
+    aanpassen?
+
+
