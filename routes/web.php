@@ -11,4 +11,11 @@
 |
 */
 
+
+Route::get('/', 'pagesController@home' );
+Route::get('/about', 'pagesController@about' )->name('about');
+Route::get('/contact', 'pagesController@contact' );
+
 Route::resource('projects', 'projectsController');
+
+Auth::routes();

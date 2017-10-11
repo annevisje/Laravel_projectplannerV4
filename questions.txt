@@ -1,10 +1,19 @@
 1. Wat is het artisan commando om een overzicht van de
    beschikbare routes te zien?
 
+php artisan route:list
 
 
-2.  Welke routes worden geregistreerd als we de route::resource('')
+2.  Welke routes worden geregistreerd als we de route::resource('projects')
     methode gebruiken?
+
+    website.nl/projects                GET
+    website.nl/projects/create         GET
+    website.nl/projects                POST
+    website.nl/projects/{project}      GET
+    website.nl/projects/{project}      PUT
+    website.nl/projects/{project}      DELETE
+    website.nl/projects/{project}/edit GET
 
 
 
@@ -16,28 +25,38 @@
 4.  Leg in eigen woorden uit wat het 'MVC'
     (model, view, controller) design pattern inhoudt.
 
+    Model:  - Deze ligt synchroon met de data van een tabel uit de database
+            - representatie van data
+    Controller: - Handelt de requests van de user af.
+    View:   - User interface
 
 5.  Geef aan hoe ik een model maak voor een Project.
 
-
+    php artisan make:model Project
 
 
 6.  Geef aan hoe ik hier een controller voor maak.
 
+    php artisan make:controller projectsController  --resource
 
 
 
 7.  Geef een voorbeeld van hoe ik binnen een controller data
     mee kan geven aan een view.
 
+    $projects = \App\Project::all();
+    return view('projects')->with('projects', $projects)
 
 
 8.  Geef een voorbeeld van hoe validatie werkt binnen een controller
 
-
+    $this->validate($request, [
+      'name' => 'required|unique:posts'
+    ]);
 
 
 9.  Hoe weet Laravel welke tabel bij welk model hoort? Hoe kun je dit
     aanpassen?
 
+    protected $table = "tbl_clients";
 

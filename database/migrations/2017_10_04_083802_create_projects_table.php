@@ -21,6 +21,7 @@ class CreateProjectsTable extends Migration
             $table->boolean('completed');
             $table->date('started')->nullable();
             $table->timestamps();
+            $table->date('deleted_at')->nullable();
         });
     }
 

@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class projectsController extends Controller
 {
+
+    public function __construct() {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -61,7 +66,9 @@ class projectsController extends Controller
      */
     public function show($id)
     {
-        //
+        $project = \App\Project::find($id);
+        return view('projects/show')
+            ->with('project', $project);
     }
 
     /**
@@ -95,6 +102,7 @@ class projectsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        \App\Project::destroy($id);
+        
     }
 }
