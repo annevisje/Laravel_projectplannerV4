@@ -17,5 +17,8 @@ Route::get('/about', 'pagesController@about' )->name('about');
 Route::get('/contact', 'pagesController@contact' );
 
 Route::resource('projects', 'projectsController');
+Route::put('projects/{id}/complete', 'projectsController@finish');
+
+Route::resource('tasks', 'tasksController');
 
 Auth::routes();

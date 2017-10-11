@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+/**
+ * Class projectsController
+ * @package App\Http\Controllers
+ */
 class projectsController extends Controller
 {
 
@@ -67,8 +71,11 @@ class projectsController extends Controller
     public function show($id)
     {
         $project = \App\Project::find($id);
+        $categories = \App\Category::all();
+
         return view('projects/show')
-            ->with('project', $project);
+            ->with('project', $project)
+            ->with('categories', $categories);
     }
 
     /**
@@ -105,4 +112,20 @@ class projectsController extends Controller
         \App\Project::destroy($id);
         
     }
+
+
+    /**
+     * Finishes current project
+     *
+     * @param $id
+     */
+    public function finish($id)
+    {
+        $project = \App\Project::find($id);
+        $project->completed = 1;
+        $project->save();
+
+        return back();
+    }
+
 }

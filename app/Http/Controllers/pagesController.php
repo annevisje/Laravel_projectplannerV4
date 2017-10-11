@@ -20,12 +20,7 @@ class pagesController extends Controller
     }
 
     public function contact() {
-
-        if (Auth::user()->name == 'Sales' )
-        {
-            return view('pages/contact');
-        }
-        return false;
+        return view('pages/contact');
     }
 
     public function about() {
